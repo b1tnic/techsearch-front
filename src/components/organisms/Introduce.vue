@@ -1,3 +1,7 @@
+<script setup lang="ts">
+    import IntroduceBox from '../molecules/IntroduceBox.vue'
+</script>
+
 <template>
     <div class="introduce">
         <div class="introduce-page">
@@ -16,11 +20,10 @@
             <h2 class="introduce-page-detail">
                 そんなときにご利用いただけます！
             </h2>
-            
         </div>
-        <div class="introduce-search">
-        </div>
-        <div class="introduce-preview">
+        <div class="introduce-box-area">
+            <IntroduceBox :title="'Qiita記事を基にAIが回答を生成'" :imgPath="'/src/assets/techsearch-demo.png'"></IntroduceBox>
+            <IntroduceBox :title="'記事本文のプレビューを画面上で閲覧'" :imgPath="'/src/assets/techsearch-demo2.png'"></IntroduceBox>
         </div>
     </div>
 </template>
@@ -28,6 +31,10 @@
 <style scoped>
 .introduce {
     margin:40px;
+}
+
+.introduce-page {
+    margin-bottom:32px;
 }
 
 .introduce-page-title {
@@ -49,5 +56,11 @@
     font-size:24px;
     margin:2px;
     font-weight:500;
+}
+
+.introduce-box-area {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 </style>

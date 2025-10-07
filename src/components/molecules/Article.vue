@@ -14,7 +14,6 @@ const modalShowFlag = ref(false);
 
 const toggleFlag = () => {
     modalShowFlag.value = !modalShowFlag.value
-    console.log("Clicked")
 }
 
 // 記事本文の文字数制限
@@ -50,7 +49,7 @@ const parsedBody = computed(() => {
 
 <template>
     <div class="article-box">
-        <a :href="article.Url">
+        <a :href="article.Url" target="_blank">
             <div class="article-part-box">
                 <p class="article-part article-title">{{ article.Title }}</p>
                 <p class="article-part article-body">{{ formattedArticleBody }}</p>
@@ -91,10 +90,7 @@ const parsedBody = computed(() => {
         min-width: 90%;
         display:flex;
         align-items: center;
-    }
-
-    .article-box:hover {
-        opacity:0.7;
+        text-decoration: none;
     }
 
     .article-part {
@@ -104,6 +100,10 @@ const parsedBody = computed(() => {
 
     .article-part-box {
         opacity:0.5;
+    }
+
+    .article-part-box:hover {
+        opacity:0.7;
     }
 
     .article-informations {
@@ -142,6 +142,11 @@ const parsedBody = computed(() => {
         padding-left:24px;
         margin-right:24px;
     }
+
+    .article-icon:hover {
+        opacity:0.7;
+    }
+
 
     .article-modal-enter-from .overlay,
     .article-modal-leave-to .overlay{
