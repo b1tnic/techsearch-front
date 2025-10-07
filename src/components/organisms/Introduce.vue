@@ -1,5 +1,7 @@
 <script setup lang="ts">
     import IntroduceBox from '../molecules/IntroduceBox.vue'
+    import demoPng from '@/assets/techsearch-demo.png'
+    import demo2Png from '@/assets/techsearch-demo2.png'
 </script>
 
 <template>
@@ -22,15 +24,23 @@
             </h2>
         </div>
         <div class="introduce-box-area">
-            <IntroduceBox :title="'Qiita記事を基にAIが回答を生成'" :imgPath="'/assets/techsearch-demo.png'"></IntroduceBox>
-            <IntroduceBox :title="'記事本文のプレビューを画面上で閲覧'" :imgPath="'/assets/techsearch-demo2.png'"></IntroduceBox>
+            <IntroduceBox :title="'Qiita記事を基にAIが回答を生成'" :imgPath="demoPng"></IntroduceBox>
+            <IntroduceBox :title="'記事本文のプレビューを画面上で閲覧可能'" :imgPath="demo2Png"></IntroduceBox>
+        </div>
+        <div class="transition-box">
+            <a href="/">
+                <button class="transition-box-button">
+                    さっそく検索！
+                </button>
+            </a>
         </div>
     </div>
 </template>
 
 <style scoped>
 .introduce {
-    margin:40px;
+    margin:40px 40px 0 40px;
+    padding-bottom:40px;
 }
 
 .introduce-page {
@@ -62,5 +72,24 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.transition-box {
+    text-align: center;
+    width: 40%;
+    margin: 80px auto;
+    border-radius:1px solid;
+}
+
+.transition-box-button {
+    min-height: 48px;
+    width:60%;
+    max-width: 360px;
+    border-radius: 10px;
+    background: #f0f4f8;
+}
+
+.transition-box-button:hover {
+    opacity: 0.7;
 }
 </style>
