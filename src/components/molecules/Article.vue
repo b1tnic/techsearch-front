@@ -87,7 +87,7 @@ const parsedBody = computed(() => {
         border: 1px solid #2d3548;
         margin: 0 36px 24px;
         padding: 0 0 0 24px;
-        height: 60px;
+        min-height: 60px;
         min-width: 90%;
         display:flex;
         align-items: center;
@@ -141,10 +141,6 @@ const parsedBody = computed(() => {
         margin-left:auto;
         padding-left:24px;
         margin-right:24px;
-    }
-
-    .article-icon {
-        opacity:
     }
 
     .article-modal-enter-from .overlay,

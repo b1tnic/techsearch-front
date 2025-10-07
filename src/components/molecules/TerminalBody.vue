@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Article from '../molecules/Article.vue'
+import { Icon } from "@iconify/vue";
 import axios, { AxiosError } from 'axios'
 import { ref } from 'vue';
 </script>
@@ -19,6 +20,14 @@ import { ref } from 'vue';
         <p v-if="loadingFlag" class="loading">
             検索中・・・        
         </p>
+        <div class="generated-box">
+            <div class="generate-icon" @click="toggleFlag">
+                <Icon icon="majesticons:robot" class="generate-icon" />
+            </div>
+            <p class="generated-box-text">
+                {{ generatedText }}
+            </p>
+        </div>
         <Article v-for="article in articles" :key="article.ID" :article="article"></Article>
     </div>
 </template>
@@ -36,6 +45,8 @@ export default {
     data() {
         return {
             query: '',
+            response: {},
+            generatedText: '',
             articles: []
         }
     },
@@ -49,7 +60,11 @@ export default {
             event.preventDefault()
             toggleLoadingFlag()
             try {
-                this.articles = await this.sendQuery(this.query)
+                this.articles = []
+                this.generatedText = ""
+                this.response = await this.sendQuery(this.query)
+                this.generatedText = this.response.Output
+                this.articles = this.response.Articles
             } finally {
                 toggleLoadingFlag()
             }
@@ -136,5 +151,29 @@ export default {
         font-weight: 600;
         line-height: 48px;
         display: inline-block;
+    }
+
+    .generated-box {
+        background: rgba(20, 25, 40, 0.8);
+        border: 1px solid #2d3548;
+        margin: 0 36px 24px;
+        padding: 0 0 0 24px;
+        min-height: 60px;
+        min-width: 90%;
+        display:flex;
+        align-items: center;
+    }
+
+    .generated-box-text {
+        color:#FFFFFF;
+        margin:0;
+    }
+
+    .generate-icon {
+        font-size:48px;
+        color:#ffffff80;
+        margin-left:auto;
+        padding-left:24px;
+        margin-right:24px;
     }
 </style>
