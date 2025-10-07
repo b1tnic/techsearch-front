@@ -22,8 +22,8 @@
             </h2>
         </div>
         <div class="introduce-box-area">
-            <IntroduceBox :title="'Qiita記事を基にAIが回答を生成'" :imgPath="'/src/assets/techsearch-demo.png'"></IntroduceBox>
-            <IntroduceBox :title="'記事本文のプレビューを画面上で閲覧'" :imgPath="'/src/assets/techsearch-demo2.png'"></IntroduceBox>
+            <IntroduceBox :title="'Qiita記事を基にAIが回答を生成'" :imgPath="'/assets/techsearch-demo.png'"></IntroduceBox>
+            <IntroduceBox :title="'記事本文のプレビューを画面上で閲覧'" :imgPath="'/assets/techsearch-demo2.png'"></IntroduceBox>
         </div>
     </div>
 </template>

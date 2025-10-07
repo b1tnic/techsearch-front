@@ -13,6 +13,6 @@ import TerminalBody from '../molecules/TerminalBody.vue'
 <style scoped>
 .terminal {
     max-width: 1280px;
-    margin:40px 30px;
+    padding: 60px 60px 120px;
 }
 </style>

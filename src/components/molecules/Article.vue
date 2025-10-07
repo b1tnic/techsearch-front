@@ -12,7 +12,7 @@ const props = defineProps({
 
 const modalShowFlag = ref(false);
 
-const toggleFlag = () => {
+const toggleModalFlag = () => {
     modalShowFlag.value = !modalShowFlag.value
 }
 
@@ -63,13 +63,13 @@ const parsedBody = computed(() => {
                 </div>
             </div>
         </a>
-        <div class="article-icon" @click="toggleFlag">
+        <div class="article-icon" @click="toggleModalFlag">
             <Icon icon="stash:article" class="article-icon" />
         </div>
     </div>
     <Transition name="article-modal">
-        <div v-if="modalShowFlag">
-            <div class="overlay" @click="toggleFlag">
+        <div v-if="modalShowFlag" @click="toggleModalFlag">
+            <div class="overlay">
             </div>
             <div class="modal">
                 <div class="title">
@@ -155,7 +155,7 @@ const parsedBody = computed(() => {
 
     .article-modal-enter-from .modal,
     .article-modal-leave-to .modal{
-      right: -600px;
+      right: -1200px;
     }
 
     .article-modal-enter-active,
@@ -181,7 +181,7 @@ const parsedBody = computed(() => {
       top: 0;
       right: 0px;
       height: 100vh;
-      width: 600px;
+      width: 1200px;
       background: white;
       box-shadow: -10px 0 30px rgba(0,0,0,0.15);
       z-index: 999;
