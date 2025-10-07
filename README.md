@@ -1,50 +1,54 @@
-# techsearch-front
-techsearchのフロントエンドのソースレポジトリ
-# techsearch
+# Qiita記事に自然言語ができるWebアプリ[techsearch](https://techserch.net/)のフロントエンドのソースレポジトリ
+<img width="710" height="375" alt="techsearch-demo" src="https://github.com/user-attachments/assets/dce16817-209b-4bbb-bde9-121acbd26b2a" />
+<img width="700" height="470" alt="techsearch-demo2" src="https://github.com/user-attachments/assets/140f65e2-5c57-4102-9fd9-44cdc989bd16" />
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+## ディレクトリ構成
+```
+.
+├── public
+├── src/
+│   ├── assets
+│   ├── components/
+│   │   ├── molecules/
+│   │   │   ├── Article 検索ページの記事結果
+│   │   │   ├── IntroduceBox サイト説明ページの説明
+│   │   │   ├── Term 利用規約ページの各利用規約
+│   │   │   ├── TerminalBody 検索ページのターミナルコンポーネントの体部分
+│   │   │   └── TerminalHead 検索ページのターミナルコンポーネントの頭部分
+│   │   ├── organisms/
+│   │   │   ├── Header ヘッダー
+│   │   │   ├── Introduce サイト説明ページメインコンテンツ
+│   │   │   ├── Sidebar サイドバー
+│   │   │   ├── Terminal 検索ページメインコンテンツ
+│   │   │   └── Terms 利用規約ページメインコンテンツ
+│   │   └── templates/
+│   │       ├── AboutPageTemplate サイト説明ページのテンプレート
+│   │       ├── HomePageTemplate 検索ページのテンプレート
+│   │       └── TermsPageTemplate 利用規約ページのテンプレート
+│   ├── pages/
+│   │   ├── AboutPage サイト説明ページ
+│   │   ├── HomePage 検索ページ
+│   │   └── TermsPage 利用規約ページ
+│   └── router
+└── package.json
 ```
 
-### Compile and Hot-Reload for Development
+## 技術要件
+言語：TypeScript
+
+フレームワーク：Vue
+
+ライブラリ：Vite、Iconify、vue-router、marked、axios
+
+### 開発環境の立ち上げ
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### 実行ファイルのビルド
 
 ```sh
 npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
 ```
