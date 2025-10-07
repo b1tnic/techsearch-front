@@ -11,11 +11,11 @@ import { ref } from 'vue';
             TechSearch
         </h1>
         <h4 class="terminal-body-title-description">
-            // qiita、zennの記事を曖昧検索できるアプリ
+            // qiitaの記事を自然言語で検索できるアプリ
         </h4>
         <div class="search-box">
-            <span class="search-box-symbol">&gt;</span>
-            <textarea v-model="query" @keydown.enter="searchArticles" class="search-box-input" placeholder="// 単体テストの考え方について全体的にまとめた記事"></textarea>
+            <span @click="searchArticles" class="search-box-symbol">&gt;</span>
+            <textarea v-model="query" @keydown.enter="searchArticles" class="search-box-input" placeholder="// Pythonの単体テストで有効なライブラリを調べて"></textarea>
         </div>
         <p v-if="loadingFlag" class="loading">
             検索中・・・        
@@ -151,6 +151,7 @@ export default {
         font-weight: 600;
         line-height: 48px;
         display: inline-block;
+        margin:auto;
     }
 
     .generated-box {
