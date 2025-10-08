@@ -1,5 +1,5 @@
 # Qiita記事に自然言語ができるWebアプリ[techsearch](https://techserch.net/)のフロントエンドのソースレポジトリ
-(**現在、Qiitaサポートチームにサイト公開可否、データ利用可否を現在問い合わせしている最中なのでどのような文言を検索クエリにしてもダミーデータが返ってくるようになっています。**)
+(**現在、Qiita様にサイト公開可否、データ利用可否を現在問い合わせしている最中なのでどのような文言を検索クエリにしてもダミーデータが返ってくるようになっています。**)
 <img width="710" height="375" alt="techsearch-demo" src="https://github.com/user-attachments/assets/dce16817-209b-4bbb-bde9-121acbd26b2a" />
 <img width="700" height="470" alt="techsearch-demo2" src="https://github.com/user-attachments/assets/140f65e2-5c57-4102-9fd9-44cdc989bd16" />
 
